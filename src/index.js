@@ -38,5 +38,5 @@ app.get('/productos', (req,res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Server running on ${PORT}`)
+    console.log(`Server v2 running on ${PORT}`)
 })
