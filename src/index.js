@@ -3,6 +3,8 @@ const bodyParse = require('body-parser')
 const app = express()
 const cors = require('cors')
 const PORT = process.env.PORT || 5000
+app.set('view engine', 'ejs');
+
 
 const productos = [
     {id: 1, nombre: 'Manzana'},
@@ -28,11 +30,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/clientes', (req, res) => {
-    res.status(200).json(clientes)
+    res.render('clientes', {clientes})
 })
 
 app.get('/productos', (req,res) => {
-    res.status(200).json(productos)
+    res.render('productos', {productos})
 })
 
 app.listen(PORT, () => {
